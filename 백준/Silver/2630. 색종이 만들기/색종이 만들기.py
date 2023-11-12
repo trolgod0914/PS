@@ -18,16 +18,14 @@ def four_division(array):
     return a1, a2, a3, a4
 
 while Array:
-    List = []
-    for A in Array:
-        if sum(A) == len(A):
-            Answer_blue.append(A)
-        elif sum(A) == 0:
-            Answer_white.append(A)
-        else:
-            A1, A2, A3, A4 = four_division(A)
-            List += [A1, A2, A3, A4]
-    Array = copy.deepcopy(List)
+    A = Array.pop()
+    if sum(A) == len(A):
+        Answer_blue.append(A)
+    elif sum(A) == 0:
+        Answer_white.append(A)
+    else:
+        A1, A2, A3, A4 = four_division(A)
+        Array += [A1, A2, A3, A4]
 
 print(len(Answer_white))
 print(len(Answer_blue))
